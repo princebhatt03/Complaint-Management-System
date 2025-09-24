@@ -7,6 +7,8 @@ const MongoStore = require('connect-mongo');
 const flash = require('express-flash');
 const http = require('http');
 const connectToDb = require('./db/db');
+const userRoutes = require('./routes/user.routes');
+const path = require('path');
 
 // Connect to Database
 connectToDb();
@@ -15,10 +17,13 @@ connectToDb();
 const app = express();
 const server = http.createServer(app);
 
-// Allowed Origins
-const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:5173'];
+// ✅ Allowed Origins (Include deployed frontend URL)
+const allowedOrigins = [
+  process.env.FRONTEND_URL || 'http://localhost:5173',
+  'https://travel-website-lac-three.vercel.app',
+];
 
-// CORS Configuration
+// ✅ CORS Configuration
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -38,8 +43,9 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Session Configuration
+// ✅ Session Configuration
 app.use(
   session({
     secret: process.env.SESSION_SECRET || 'your-secret-key',
@@ -61,12 +67,13 @@ app.use(
 // Flash Messages
 app.use(flash());
 
-// Default Route
+// ✅ Default Route
 app.get('/', (req, res) => {
   const redirectUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
   res.redirect(redirectUrl);
 });
 
-// API Routes
+// ✅ API Routes
+app.use('/api/users', userRoutes);
 
 module.exports = { app, server };
