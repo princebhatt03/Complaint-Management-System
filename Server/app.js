@@ -20,7 +20,7 @@ const server = http.createServer(app);
 // ✅ Allowed Origins (Include deployed frontend URL)
 const allowedOrigins = [
   process.env.FRONTEND_URL || 'http://localhost:5173',
-  'https://travel-website-lac-three.vercel.app',
+  'https://complaint-management-system-swart.vercel.app/',
 ];
 
 // ✅ CORS Configuration

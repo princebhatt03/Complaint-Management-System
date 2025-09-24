@@ -4,3 +4,8 @@
 2025-09-24 11:45:32 [WARN]: Login failed - wrong password for email: p@gmail.com
 2025-09-24 11:45:37 [INFO]: User logged in - ID: 68d38b81f1c0989a5f3a571a
 2025-09-24 11:46:13 [INFO]: User deleted - ID: 68d38b81f1c0989a5f3a571a
+2025-09-24 16:35:18 [INFO]: New user registered - ID: 68d3d06e929255ed26e86dfa, Email: sharmaprince89667@gmail.com
+2025-09-24 16:35:47 [WARN]: Registration failed - duplicate email: sharmaprince89667@gmail.com
+2025-09-24 16:38:44 [WARN]: Registration failed - duplicate email: sharmaprince89667@gmail.com
+2025-09-24 16:42:29 [INFO]: New user registered - ID: 68d3d21d929255ed26e86dff, Email: sharmaprince89667@gmail.com
+2025-09-24 16:43:49 [INFO]: New user registered - ID: 68d3d26d929255ed26e86e02, Email: sharmaprince89667@gmail.com
